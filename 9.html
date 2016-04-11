@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000">
+	<title>MAF</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+	<div id="text_one" class="container-fluid hide">
+		<div class="row">
+			<div class="col-xs-12 text-center vertical-align">
+				<h1>In questi casi non dobbiamo parlare.</h1>
+			</div>
+		</div>
+	</div>
+
+	<!--
+	<div id="text_two" class="container-fluid hide">
+		<div class="row">
+			<div class="col-xs-12 text-center vertical-align">
+				<h1>Credits</h1>
+			</div>
+		</div>
+	</div> 
+	-->
+
+	<div id="player" class="hidden">
+		<iframe id="video" src="https://www.youtube.com/embed/0MqsWqBX4wQ?showinfo=0&rel=0&controls=0&autoplay=0"></iframe>
+	</div>
+
+
+	
+	<!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- jQuery Mobile 
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+	<!-- Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="script/script.js"></script>
+	<script type="text/javascript">
+
+	//block screen so user cant click
+
+	/*YouTube API
+	var tag = document.createElement('script');
+	tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+        	height: '390',
+        	width: '640',
+         	videoId: 'pjtQMK1WpVc?autoplay=0&controls=0&showinfo=0&rel=0',
+          	events: {
+            	'onReady': onPlayerReady,
+            	'onStateChange': onPlayerStateChange
+          	}
+        });
+    }
+
+    function onPlayerReady(event) {
+        //event.target.playVideo();
+        $("iframe#player").attr("src", $("iframe#player").attr("src").replace("autoplay=0", "autoplay=1"))
+    }
+
+    var done = false;
+	function onPlayerStateChange(event) {
+	    switch (event.data) {
+		    case YT.PlayerState.UNSTARTED:
+		      console.log('unstarted');
+		      break;
+		    case YT.PlayerState.ENDED:
+		      console.log('ended');
+		      break;
+		    case YT.PlayerState.PLAYING:
+		      console.log('playing');
+		      break;
+		    case YT.PlayerState.PAUSED:
+		      console.log('paused');
+		      break;
+		    case YT.PlayerState.BUFFERING:
+		      console.log('buffering');
+		      break;
+		    case YT.PlayerState.CUED:
+		      console.log('video cued');
+		      break;
+		}
+	}
+	function stopVideo() {
+	    player.stopVideo();
+	}*/
+
+	function startVideo(){
+		$("iframe#video").attr("src", $("iframe#video").attr("src").replace("autoplay=0", "autoplay=1"));
+		//setTimeout(blockDiv, 6000); //blockPause for mobile
+	}
+
+	setTimeout(fadeOutTextOne, 3000);
+	setTimeout(hideTextOne, 4000);
+	setTimeout(showVideo, 4500);
+
+	/*
+
+	function blockDiv(){
+		var blockPause = $(document.createElement('div'))
+        	.attr('id', 'blockDiv')
+        	.height('100%').width('100%')
+        	.css({'z-index':'3333', 'position' : 'absolute', 'top': '0', 'left':'0'});
+		$('body').append(blockPause);
+	}
+
+	function fadeOutVideo(){
+		$("#player").removeClass("fadeIn");
+		$("#player").addClass("fadeOut");
+	}
+
+	function hideVideo(){
+		$("#player").addClass("hidden");
+	}
+
+	function countDown(){
+		setTimeout(fadeOutVideo, 120000);
+		setTimeout(hideVideo, 121000);
+		setTimeout(showTextTwo, 121500);
+	}
+	
+	function showTextTwo(){
+		$("#text_two").addClass("animated fadeIn");
+		$("#text_two").removeClass("hide");
+	}
+
+	*/
+
+	</script>
+</body>
+</html>
